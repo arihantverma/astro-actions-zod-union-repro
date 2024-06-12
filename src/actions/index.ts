@@ -22,7 +22,7 @@ const schema = z.union([schema1, schema2]);
 export const server = {
   sendFormDataUnion: defineAction({
     accept: 'form',
-    // input: schema,
+    input: schema,
     handler: async (incoming) => {
       // this comes true with zod union, but the type information is that of a javascript literal object
       console.info(incoming instanceof FormData);
